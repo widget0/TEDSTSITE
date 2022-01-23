@@ -1,0 +1,97 @@
+/* Designed by Jake Hamblin in Dayton, Ohio. This design is a free release that can be found on https://jakehamblin.com/github */
+
+body {
+	display: flex;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-image: linear-gradient(45deg, var(--gradient-one), var(--gradient-two));
+	align-items: center;
+	justify-content: center;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.card {
+	width: 35%;
+	padding: 4vh 2%;
+	background-color: var(--gradient-two);
+	border: .3vh solid var(--main-color);
+	border-radius: .5vh;
+	text-align: center;
+	position: relative;
+	scale: 0;
+	transform: translateY(100vh);
+	transition: all 1s ease;
+}
+
+.card.loaded {
+	scale: 1;
+	transform: translateY(0vh);
+}
+
+.card .avatar {
+	display: inline-block;
+	height: 17.5vh;
+	width: 17.5vh;
+	background-image: var(--logo);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	background-color: var(--gradient-one);
+	margin-top: -12.75vh;
+	border: .3vh solid var(--main-color);
+}
+
+.card .information {
+	margin-top: 2.5vh;
+}
+
+.card .information h1 {
+	font-size: 5vh;
+	color: var(--main-color);
+	margin: 0;
+	font-weight: 700;
+	margin-bottom: 2vh;
+}
+
+.card .information h2 {
+	font-size: 1.75vh;
+	color: #fff;
+	margin: 0;
+	font-weight: 500;
+}
+
+.card .information .socialmedia {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin-top: 6vh;
+}
+
+.card .information .socialmedia a {
+	display: flex;
+	font-size: 2vh;
+	height: 4.5vh;
+	width: 4.5vh;
+	border-radius: 50%;
+	color: #fff;
+	background-color: var(--main-color);
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	margin: 0 1vh;
+	transition: scale .25s ease;
+}
+
+.card .information .socialmedia a:hover {
+	scale: 1.1;
+}
+
+@media screen and (max-width: 600px), (orientation : portrait) {
+	.card {
+		width: 85%;
+	}
+}
